@@ -1,10 +1,24 @@
 {
   "extends": "./tsconfig.base",
   "compilerOptions": {
-    "strict": true,
+    "strict": true
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "references": [{
-     "path": "./aulas/5.6.auth-provider"
-  }]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "references": [
+    null,
+    {
+      "path": "./aulas/2.1.install"
+    },
+    {
+      "path": "./aulas/2.2.basic-config"
+    },
+    {
+      "path": "./aulas/5.6.auth-provider"
+    }
+  ]
 }

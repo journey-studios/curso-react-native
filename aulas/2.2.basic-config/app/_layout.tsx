@@ -14,7 +14,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(auth)',
+  initialRouteName: '(tabs)',
 }
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -48,15 +48,20 @@ function RootLayoutNav() {
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack>
           <Stack.Screen
-            name="(auth)"
+            name="(tabs)"
             options={{
               headerShown: false,
             }}
           />
+
           <Stack.Screen
-            name="(tabs)"
+            name="modal"
             options={{
-              headerShown: false,
+              title: 'Tamagui + Expo',
+              presentation: 'modal',
+              animation: 'slide_from_right',
+              gestureEnabled: true,
+              gestureDirection: 'horizontal',
             }}
           />
         </Stack>
