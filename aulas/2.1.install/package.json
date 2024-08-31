@@ -1,14 +1,14 @@
 {
-  "name": "2.1.install",
+  "name": "2.1.install-config",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
     "upgrade:tamagui": "yarn up '*tamagui*'@latest '@tamagui/*'@latest",
     "upgrade:tamagui:canary": "yarn up '*tamagui*'@canary '@tamagui/*'@canary",
-    "start": "npx expo start -c",
-    "android": "npx expo start --android",
-    "ios": "npx expo start --ios",
-    "web": "npx expo start --web",
+    "start": "EXPO_USE_METRO_WORKSPACE_ROOT=1 npx expo start -c",
+    "android": "EXPO_USE_METRO_WORKSPACE_ROOT=1 npx expo start --android",
+    "ios": "EXPO_USE_METRO_WORKSPACE_ROOT=1 npx expo start --ios",
+    "web": "EXPO_USE_METRO_WORKSPACE_ROOT=1 npx expo start --web",
     "test": "jest --watchAll"
   },
   "jest": {

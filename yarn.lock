@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"2.install@workspace:aulas/2.install":
+"2.1.install-config@workspace:aulas/2.1.install":
   version: 0.0.0-use.local
-  resolution: "2.install@workspace:aulas/2.install"
+  resolution: "2.1.install-config@workspace:aulas/2.1.install"
   dependencies:
     "@babel/core": "npm:^7.24.6"
     "@expo/metro-config": "npm:~0.18.4"

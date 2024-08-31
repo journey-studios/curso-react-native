@@ -3,6 +3,7 @@
  * @type {import('expo/metro-config').MetroConfig}
  */
 const { getDefaultConfig } = require('expo/metro-config')
+const path = require('path');
 
 const config = getDefaultConfig(__dirname, {
   // [Web-only]: Enables CSS support in Metro.
@@ -18,6 +19,14 @@ module.exports = withTamagui(config, {
 })
 
 config.resolver.sourceExts.push('mjs')
+
+const projectRoot = __dirname;
+const monorepoRoot = path.resolve(projectRoot, '../..');
+
+config.resolver.nodeModulesPaths = [
+  path.resolve(projectRoot, 'node_modules'),
+  path.resolve(monorepoRoot, 'node_modules'),
+];
 
 module.exports = config
 
