@@ -37,10 +37,11 @@ const read = async (file) => {
 const updatePackageNames = async () => {
   const dirs = await getDirectories('./aulas');
   dirs.forEach(async (item) => {
-    const pathFile = `./aulas'/${item}/package.json`;
-    const package = await read(pathFile)
+    const pathFile = `./aulas/${item}/package.json`;
+    const package = JSON.parse(await read(pathFile));
     if(package) {
       package.name = item
+      console.info(pathFile)
       await writeFile(pathFile, JSON.stringify(package, null, 2), 'utf8');
     }
   })
