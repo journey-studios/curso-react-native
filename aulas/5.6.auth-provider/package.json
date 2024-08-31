@@ -1,11 +1,7 @@
 {
-  "name": "projekt",
+  "name": "5.6.auth-provider",
   "main": "expo-router/entry",
   "version": "1.0.0",
-  "private": true,
-  "workspaces": [
-    "aulas/*"
-  ],
   "scripts": {
     "upgrade:tamagui": "yarn up '*tamagui*'@latest '@tamagui/*'@latest",
     "upgrade:tamagui:canary": "yarn up '*tamagui*'@canary '@tamagui/*'@canary",

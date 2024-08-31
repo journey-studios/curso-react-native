@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base",
+  "compilerOptions": {
+    "composite": true,
+    "strict": true,
+    "paths": {
+      "srcccc/*": ["../../aulas/5.6.auth-provider/aulas"]
+    }
+  },
+  "include": ["../../aulas/5.6.auth-provider/**/*.ts", "../../aulas/5.6.auth-provider/**/*.tsx", "../../aulas/5.6.auth-provider/.expo/types/**/*.ts", "../../aulas/5.6.auth-provider/expo-env.d.ts"]
+}
