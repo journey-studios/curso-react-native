@@ -12,6 +12,9 @@
   "references": [
     null,
     {
+      "path": "./aulas/10.loading-state"
+    },
+    {
       "path": "./aulas/11.auth-context"
     },
     {
@@ -28,10 +31,16 @@
     },
     null,
     {
-      "path": "./aulas/7.supabase-packages"
+      "path": "./aulas/7.supabase-packages-bkp"
+    },
+    {
+      "path": "./aulas/7.supabase-react"
     },
     {
       "path": "./aulas/8.supabase-hook"
+    },
+    {
+      "path": "./aulas/9.new-user"
     }
   ]
 }
