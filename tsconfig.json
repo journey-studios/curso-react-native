@@ -12,16 +12,16 @@
   "references": [
     null,
     {
-      "path": "./aulas/2.1.install"
+      "path": "./aulas/2.install"
     },
     {
-      "path": "./aulas/3.1.login"
+      "path": "./aulas/3.login"
     },
     {
-      "path": "./aulas/4.1.signup"
+      "path": "./aulas/4.signup"
     },
     {
-      "path": "./aulas/5.6.auth-provider"
+      "path": "./aulas/6.auth-provider"
     }
   ]
 }
