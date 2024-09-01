@@ -1,5 +1,5 @@
 {
-  "name": "6.auth-provider",
+  "name": "11.auth-context",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
