@@ -25,6 +25,10 @@
     },
     {
       "path": "./aulas/5.signup-screen"
+    },
+    null,
+    {
+      "path": "./aulas/7.supabase-packages"
     }
   ]
 }
