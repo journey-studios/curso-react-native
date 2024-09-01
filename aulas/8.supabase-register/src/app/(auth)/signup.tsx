@@ -6,6 +6,7 @@ import z from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from 'expo-router'
+import useSupabase from "src/hooks/useSupabase";
 
 const signupFormSchema = z.object({
   first_name: z.string().min(6, {
@@ -32,6 +33,7 @@ type signupFormData = z.infer<typeof signupFormSchema>
 
 
 const Signup = () => {
+  const supabase = useSupabase();
   const router = useRouter();
 
   const {
@@ -52,9 +54,22 @@ const Signup = () => {
   });
 
   const handleRegister = async (data) => {
-    alert(`User login ${data.email}`)
-  }
+    const result = await supabase.auth.signUp({
+      email: data.email,
+      password: data.password
+    })
 
+    if(result.error) {
+      alert('Errro ao cadastrar novo usuário.')
+      return null;
+    }
+
+    if(result.data.session) {
+      console.log(result.data.session)
+      alert(`Usuário ${data.email} logado com sucesso!`)
+    }
+  }
+  
   return (
     <ScrollView>
       <FormComponent
