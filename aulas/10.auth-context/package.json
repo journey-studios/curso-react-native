@@ -1,5 +1,5 @@
 {
-  "name": "9.new-user-bkp",
+  "name": "10.auth-context",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {

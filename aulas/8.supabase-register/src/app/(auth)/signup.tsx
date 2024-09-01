@@ -66,7 +66,7 @@ const Signup = () => {
 
     if(result.data.session) {
       console.log(result.data.session)
-      alert(`Usuário ${data.email} logado com sucesso!`)
+      alert(`Usuário ${data.email} cadastrado com sucesso!`)
     }
   }
   

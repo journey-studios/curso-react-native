@@ -1,10 +1,13 @@
 import { Href, useRouter } from 'expo-router';
 import {
   Button as ButtonT,
+  Spinner,
   styled,
+  Text,
 } from 'tamagui';
 
 type ButtonProps = {
+  loading?: boolean;
   navigateTo?: Href;
   onPress?: any;
 }
@@ -17,16 +20,25 @@ const StyledButton = styled(ButtonT, {
   }
 })
 
+const Loading = () => {
+  return <Spinnez`r/>
+}
+
 const Button = StyledButton.styleable<ButtonProps>(({
   children,
   navigateTo,
   onPress,
+  loading,
   ...rest
 }, ref) => {
   const router = useRouter();
 
   // const handlePress = function() {}
   const handlePress = (e) => {
+    if(loading) {
+      return null;
+    }
+
     e.preventDefault();
     if(navigateTo) {
       router.push(navigateTo)
@@ -39,7 +51,13 @@ const Button = StyledButton.styleable<ButtonProps>(({
  
   return (
     <StyledButton ref={ref} onPress={handlePress} {...rest}>
-      {children}
+      {loading ? (
+        <Loading/>
+      ) : (
+        <Text>
+          {children}
+        </Text>
+      )}
     </StyledButton>
   )
 })

@@ -12,10 +12,7 @@
   "references": [
     null,
     {
-      "path": "./aulas/10.loading-state"
-    },
-    {
-      "path": "./aulas/11.auth-context"
+      "path": "./aulas/10.auth-context"
     },
     {
       "path": "./aulas/2.install"
@@ -40,7 +37,7 @@
       "path": "./aulas/8.supabase-register"
     },
     {
-      "path": "./aulas/9.new-user-bkp"
+      "path": "./aulas/9.loading-state"
     }
   ]
 }
