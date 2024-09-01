@@ -29,6 +29,9 @@
     null,
     {
       "path": "./aulas/7.supabase-packages"
+    },
+    {
+      "path": "./aulas/8.supabase-hook"
     }
   ]
 }
