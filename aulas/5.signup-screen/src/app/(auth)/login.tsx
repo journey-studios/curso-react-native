@@ -1,16 +1,11 @@
-import { AnimatePresence, Input, Label, styled, Text, View } from "tamagui"
-import { Controller, useForm } from "react-hook-form"
+import { View } from "tamagui"
+import { useForm } from 'react-hook-form'
 import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Button from "src/components/Button";
-import { Info } from "@tamagui/lucide-icons";
 
-const FormComponent = styled(View, {
-  tag: 'form',
-  f: 1,
-  flexDirection: 'row',
-  maxWidth: '100%'
-})
+import InputComponent from 'src/components/form/InputComponent';
+import FormComponent from 'src/components/form/FormComponent';
 
 const loginFormSchema = z.object({
   email: z.string().email({
@@ -21,68 +16,6 @@ const loginFormSchema = z.object({
   })
 })
 
-
-const InputComponent = ({
-  name,
-  id,
-  control,
-  label,
-  errors
-}) => {
-  return (
-    <>
-      <Controller
-        name={name}
-        control={control}
-        render={({ field}) => (
-          <View
-            {...(errors[name] && {
-              theme: 'red'
-            })}
-            minWidth="100%"
-          >
-            <Label> {label} </Label>
-            <Input
-              onChangeText={field.onChange}
-              onBlur={field.onBlur}
-              value={field.value}
-              id={id}
-            />
-
-            {errors[name] && 
-              <AnimatePresence>
-                <View
-                  left={0}
-                  gap="$2"
-                  flexDirection="row"
-                  animation={"bouncy"}
-                  scaleY={1}
-                  enterStyle={{
-                    opacity: 0,
-                    y: -10,
-                    scaleY: 0.5
-                  }}
-                  paddingVertical="$2"
-                >
-                  <Info size={"$1"} color="$color10"/>
-                  <Text
-                    p="$1"
-                    color="$color10"
-                    fontWeight={"$2"}
-                  >
-                    {errors[name].message}
-                  </Text>
-                </View>
-              </AnimatePresence>
-            }
-          </View>
-        )}
-      >
-       
-      </Controller>
-    </>
-  )
-}
 
 type loginFormData = z.infer<typeof loginFormSchema>
 
@@ -107,31 +40,48 @@ const Login = () => {
 
   return (
     <FormComponent
-    
+      alignItems="center"
     >
       <View
         p="$6"
+        gap="$4"
         flexDirection="column"
       >
-
         <InputComponent
           control={control}
           errors={errors}
-          name="email"
-          id="email"
+          name="email" 
+          id="email" 
           label="Email"
         />
         <InputComponent
           control={control}
           errors={errors}
-          name="password"
-          id="password"
-          label="Password"
+          name="password" 
+          id="password" 
+          label="Senha"
         />
+        <View
+          gap="$4"
+          flexDirection="row"
+          justifyContent="space-between"
+        >
+          <Button 
+            f={1}
+            navigateTo="/signup"
 
-        <Button onPress={handleSubmit(handleLogin)}>
-          Login
-        </Button>
+          >
+            Cadastrar
+          </Button>
+          <Button
+            themeInverse
+            f={1}
+            onPress={handleSubmit(handleLogin)}
+          >
+            Login
+          </Button>
+        </View>
+
       </View>
     </FormComponent>
   )
