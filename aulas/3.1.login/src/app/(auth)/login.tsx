@@ -116,12 +116,14 @@ const Login = () => {
 
         <InputComponent
           control={control}
-          name="user"
-          id="user"
-          label="User"
+          errors={errors}
+          name="email"
+          id="email"
+          label="Email"
         />
         <InputComponent
           control={control}
+          errors={errors}
           name="password"
           id="password"
           label="Password"
