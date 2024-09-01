@@ -18,6 +18,9 @@
       "path": "./aulas/3.1.login"
     },
     {
+      "path": "./aulas/4.1.signup"
+    },
+    {
       "path": "./aulas/5.6.auth-provider"
     }
   ]
