@@ -1,5 +1,5 @@
 {
-  "name": "7.supabase-packages-bkp",
+  "name": "7.supabase-packages",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {

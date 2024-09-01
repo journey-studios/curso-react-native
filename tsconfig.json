@@ -31,16 +31,16 @@
     },
     null,
     {
-      "path": "./aulas/7.supabase-packages-bkp"
+      "path": "./aulas/7.supabase-packages"
     },
     {
-      "path": "./aulas/7.supabase-react"
+      "path": "./aulas/8.supabase-hook-bkp"
     },
     {
-      "path": "./aulas/8.supabase-hook"
+      "path": "./aulas/8.supabase-register"
     },
     {
-      "path": "./aulas/9.new-user"
+      "path": "./aulas/9.new-user-bkp"
     }
   ]
 }
