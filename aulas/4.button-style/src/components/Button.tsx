@@ -1,20 +1,28 @@
 import { Href, useRouter } from 'expo-router';
 import {
   Button as ButtonT,
-  ButtonProps as ButtonTProps
+  styled,
 } from 'tamagui';
 
-type ButtonProps = ButtonTProps & {
+type ButtonProps = {
   navigateTo?: Href;
   onPress?: any;
 }
 
-const Button = ({
+const StyledButton = styled(ButtonT, {
+  backgroundColor: "$blue6",
+  borderColor: "$blue8",
+  pressStyle: {
+    backgroundColor: "$blue8",
+  }
+})
+
+const Button = StyledButton.styleable<ButtonProps>(({
   children,
   navigateTo,
   onPress,
   ...rest
-}:ButtonProps) => {
+}, ref) => {
   const router = useRouter();
 
   // const handlePress = function() {}
@@ -30,10 +38,10 @@ const Button = ({
   }
  
   return (
-    <ButtonT onPress={handlePress} {...rest}>
+    <StyledButton ref={ref} onPress={handlePress} {...rest}>
       {children}
-    </ButtonT>
+    </StyledButton>
   )
-}
+})
 
 export default Button;
