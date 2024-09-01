@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ScrollView, View } from "tamagui"
 import FormComponent from 'src/components/form/FormComponent'
 import InputComponent from 'src/components/form/InputComponent'
@@ -33,6 +34,7 @@ type signupFormData = z.infer<typeof signupFormSchema>
 
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const supabase = useSupabase();
   const router = useRouter();
 
@@ -54,12 +56,14 @@ const Signup = () => {
   });
 
   const handleRegister = async (data) => {
+    setLoading(true);
     const result = await supabase.auth.signUp({
       email: data.email,
       password: data.password
     })
 
     if(result.error) {
+      setLoading(false);
       alert(result.error)
       return false;
     }
@@ -67,6 +71,7 @@ const Signup = () => {
     if(result.data.session) {
       alert('Usuário cadastrado com sucesso!')
     }
+    setLoading(false);
   }
 
   return (
@@ -130,6 +135,7 @@ const Signup = () => {
             <Button 
               f={1}
               themeInverse
+              loading={loading}
               onPress={handleSubmit(handleRegister)}
             >
               Cadastrar
