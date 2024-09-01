@@ -15,10 +15,13 @@
       "path": "./aulas/2.install"
     },
     {
-      "path": "./aulas/3.login"
+      "path": "./aulas/3.login-screen"
     },
     {
-      "path": "./aulas/4.signup"
+      "path": "./aulas/4.button-style"
+    },
+    {
+      "path": "./aulas/5.signup-screen"
     },
     {
       "path": "./aulas/6.auth-provider"

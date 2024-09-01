@@ -1,5 +1,5 @@
 {
-  "name": "3.login",
+  "name": "3.login-screen",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
