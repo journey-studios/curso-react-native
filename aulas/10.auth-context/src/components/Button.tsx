@@ -21,7 +21,7 @@ const StyledButton = styled(ButtonT, {
 })
 
 const Loading = () => {
-  return <Spinnez`r/>
+  return <Spinner/>
 }
 
 const Button = StyledButton.styleable<ButtonProps>(({
