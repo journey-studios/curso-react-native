@@ -1,5 +1,5 @@
 import { Link, Tabs } from 'expo-router'
-import { Button, useTheme } from 'tamagui'
+import { Button, Text, useTheme } from 'tamagui'
 import { Atom, AudioWaveform } from '@tamagui/lucide-icons'
 
 export default function TabLayout() {
@@ -29,6 +29,14 @@ export default function TabLayout() {
         name="two"
         options={{
           title: 'Tab Two',
+          tabBarIcon: ({ color }) => <AudioWaveform color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="three"
+        options={{
+          headerShown: false,
+          title: 'Abobrinha',
           tabBarIcon: ({ color }) => <AudioWaveform color={color} />,
         }}
       />
